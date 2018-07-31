@@ -4,7 +4,7 @@ import main from '@/components/main'
 import detail from '@/components/detail'
 
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   //mode:'history',

@@ -9,7 +9,7 @@
        <!-- 右侧导航条 登陆注册 -->
        <div class="header-nav">
          <ul class="nav-list">
-           <li @click="showLogout('showLogin')"> 登陆</li>
+           <li @click="showLogout('showLogin')">登录</li>
            <li class="nav-pill ">|</li>
            <li @click="showLogout('showReg')">注册</li>
            <li class="nav-pill">|</li>
@@ -26,7 +26,7 @@
      </div>
 
      <div class="app-footer">
-       <p>2018 fai MIT</p>
+       <p>{{not_show}}</p>
      </div>
      <!--logout部分包括login reg about组件-->
      <logout :show="showLogin" @on-close="hideLogout('showLogin')">
@@ -46,10 +46,11 @@
  import login from '@/components/login'
  import reg from '@/components/reg'
 
+ import { mapGetters } from 'vuex';
+
+
 
 export default {
-  name: 'app',
-
   components:{
     logout:logout,
     login:login,
@@ -69,7 +70,22 @@ export default {
     },
     hideLogout:function(param){
       this[param]=false;
-    }
+    },
+  },
+
+  mounted:function () {
+      console.log(this.$store.state.cartStore.show);
+      console.log(this.$store.getters.not_show);
+      this.$store.dispatch('switch_dialog',true)
+  },
+
+  computed :{
+    //这里的三点叫做 : 扩展运算符
+    //这里的三点叫做 : 扩展运算符
+    ...mapGetters([
+      'not_show',
+      // ...
+    ])
   }
 }
 </script>

@@ -37,11 +37,10 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script>
-  import slide from '../components/slide.vue'
+  import slide from '@/components/slide.vue'
   export default{
     components:{
       slide:slide

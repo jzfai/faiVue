@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './vuex/stroeModules'
 //引入Vuex
 import vx from 'vuex'
 //引入resource模块
@@ -14,12 +15,13 @@ Vue.use(vx);
 //注意Store开头要大写
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,//使用store
   template: '<App/>',
   components: { App }
 })
