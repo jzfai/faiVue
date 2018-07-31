@@ -6,7 +6,8 @@
 
 3.运行 npm run dev 结束后浏览器自动打开项目
 
-4.推荐教程 
+
+4.vuex推荐教程 
 
  坏境搭建教程
  https://blog.csdn.net/nicexibeidage/article/details/79241713
@@ -18,3 +19,9 @@
  建议和官网一起看
 
  https://vuex.vuejs.org/zh/guide/getters.html
+ 
+ 5.启动mysql和node.js服务器
+ 
+ 一.将nodeServer/sql目录下的sql语句导入到数据库
+ 
+ 二.打开nodeServer/server.js右键启动node.js服务器（前提安装了node.js服务器环境）
