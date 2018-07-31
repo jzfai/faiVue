@@ -1,6 +1,6 @@
 使用步骤
 
-1.运行 Git clone 
+1.运行 Git clone https://github.com/jzfai/faiVue.git
 
 2.在根目录下运行 npm  install    
 
