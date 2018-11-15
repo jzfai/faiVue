@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  const array = [1, 2, 3];
+  // console.log(Array.isArray([]));
+  // const array = [1,2].concat(['a', 'b'], ['name']);
+  // console.log(array);
+  /*every() 方法用于检测数组所有元素是否都符合指定条件（通过函数提供）。*/
+  // array.every(callback);
+  var ages = [32, 33, 16, 40];
+  <script>
+
+  function checkAdult(age,index,arr) {
+    console.log(age, index, arr);
+    return age >= 18;
+  }
+  //
+  // console.log(ages.every(checkAdult,"fai"));
+
+  console.log(ages.filter(checkAdult))
+  console.log(ages.find(checkAdult))
+  console.log([1, 2, 3].join(';'));
+  const maped = [{name: 'aa', age: 18}, {name: 'bb', age: 20}].map(item => item.name + 'c');
+  console.log(maped);
+
+
+</script>
+</body>
+</html>

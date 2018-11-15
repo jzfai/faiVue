@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // var target = { a: 1 };
+  //
+  // var source1 = { b: 2,d:5,fai:{a:111} };
+  // var source2 = { c: 3 };
+  // let testObj={};
+  // function clone(origin) {
+  //     return Object.assign(testObj, source1);
+  // }
+  // console.log(clone(source1));
+  // testObj.fai.a="fai"
+  // console.log(source1);
+  // console.log(testObj);
+  // Object.assign(target, source1, source2);
+
+  // {a:1, b:2, c:3}
+  // console.log( target)
+  //  var obj = { foo: 'bar', baz: 42 };
+  //  console.log(Object.keys(obj));
+  //  let z = { a: 3, b: 4 };
+  //  let n = { ...z };
+  //  console.log(n);
+  let propKey = 'foo';
+
+  let obj = {
+    [propKey]: true,
+    ['a' + 'bc']: 123,
+    body:{
+      user:"fai",
+    }
+  };
+  // console.log( Object.keys(obj));
+
+  for (var i in obj) {
+    if (obj.hasOwnProperty(i) === true) {
+      console.log(obj[i])
+    }
+  }
+  //console.log(obj.hasOwnProperty("msg"));//判断对象是否具有这个属性
+
+  /*返回对象的值*/
+  // console.log(Object.keys(obj));
+  // console.log( Object.values(obj));
+  // console.log( Object.entries(obj));//二维数组
+  // const firstName = (obj
+  //   && obj.body
+  //   && obj.body.user
+  //   && obj.body.user.firstName) || 'default';
+  // // const firstName = obj.body?.user?.firstName || 'default';
+  // console.log(firstName)
+</script>
+</body>
+</html>
