@@ -13,7 +13,9 @@ Vue.use(vr);
 Vue.use(vx);
 //实例化Vuex
 //注意Store开头要大写
+import animated from 'animate.css' // npm install animate.css --save安装，在引入
 
+Vue.use(animated)
 
 Vue.config.productionTip = false;
 
