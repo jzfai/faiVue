@@ -2,7 +2,6 @@
     <div>
       <transition name="drop">
       <div class="modal" v-if="show" @click="closeSelf">
-
            <div class="content" v-if="show">
              <span class="content-close" @close="closeSelf">×</span>
              <slot>empty</slot>

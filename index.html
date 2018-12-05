@@ -5,8 +5,104 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>vueProject</title>
   </head>
+  <style>
+    .test1{
+      color:blue;
+      font-size: 1rem;
+    }
+    .test2{
+      color:red;
+      border:1px solid #ddd;
+      font-size: 100px;
+    }
+    .test3{
+      color:green;
+      font-size: 1rem;
+    }
+    .border {
+      background-color:#CCCCCC;
+      position:relative;
+      width:3rem;
+      height:3rem;
+    }
+
+    /*解决一像素问题*/
+    .border:before {
+      content:"";
+      box-sizing:border-box;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      font-size:0;
+      line-height:0;
+      border-radius:0;
+      border:1px solid #F80B0F;
+      -webkit-transform-origin:0 0;
+      transform-origin:0 0;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio:1.5),not all {
+      .border:before {
+        width:150%;
+        height:150%;
+        -webkit-transform:scale(0.66666667);
+        transform:scale(0.66666667);
+      }
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio:2),not all {
+      .border:before {
+        width:200%;
+        height:200%;
+        -webkit-transform:scale(0.5);
+        transform:scale(0.5);
+      }
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio:3),not all {
+      .border:before {
+        width:300%;
+        height:300%;
+        -webkit-transform:scale(0.3333);
+        transform:scale(0.33333);
+      }
+    }
+  </style>
+  <script>
+   //h5适配
+    let docEl = document.documentElement;
+    let dpr = window.devicePixelRatio || 1;
+    let designW=750;//设计稿
+    let remAndPx=100; //设置1rem=100px
+    let pageFontSize=12//页面初始化fontsize
+    // adjust body font size
+    function setBodyFontSize () {
+      if (document.body) {
+        document.body.style.fontSize = (pageFontSize * dpr) + 'px'
+        console.log('fontsize的字体样式'+document.body.style.fontSize);//fontsize的字体样式
+      }
+      else {
+        document.addEventListener('DOMContentLoaded', setBodyFontSize)
+      }
+    }
+    setBodyFontSize();
+    console.log("ratio为"+dpr);
+    console.log("页面宽度" + docEl.clientWidth);
+    function setRemUnit () {
+      let rem = (docEl.clientWidth)/(designW/remAndPx);
+      console.log("rem的值" + rem+'px');
+      docEl.style.fontSize = rem + 'px'
+    }
+    setRemUnit();
+  </script>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="test1">fai1</div>
+      <div class="test2">fai2</div>
+      <div class="test3">fai3</div>
+      <div class="border">边线处理</div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
+
+
